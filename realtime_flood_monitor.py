@@ -10,8 +10,7 @@ private_key = os.environ.get('EARTHENGINE_PRIVATE_KEY')
 
 if service_account and private_key:
     # Mode GitHub Actions (Awan)
-    key_dict = json.loads(private_key)
-    credentials = ee.ServiceAccountCredentials(service_account, key_data=key_dict)
+    credentials = ee.ServiceAccountCredentials(service_account, key_data=private_key)
     ee.Initialize(credentials)
     print("Berhasil terhubung ke GEE menggunakan Service Account di GitHub Actions!")
 else:

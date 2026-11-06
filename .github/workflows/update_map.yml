@@ -37,6 +37,6 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add peta_realtime_semarang.html
+          git add peta_realtime_semarang.html index.html
           git commit -m "Auto-update peta kerentanan banjir Semarang [skip ci]" || echo "Tidak ada perubahan baru"
           git push

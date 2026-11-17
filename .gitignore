@@ -7,3 +7,5 @@ __pycache__/
 
 # Visual Studio Code settings
 .vscode/
+
+!gis_layers.json

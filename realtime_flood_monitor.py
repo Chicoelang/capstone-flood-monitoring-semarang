@@ -2,7 +2,7 @@ import os
 import json
 import ee
 import geemap
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 # 1. Inisialisasi GEE (GitHub Actions / Lokal)
 service_account = os.environ.get('EARTHENGINE_SERVICE_ACCOUNT')
@@ -159,3 +159,27 @@ Map.add_colorbar(vis_ai, label='Probabilitas Kerentanan (0 = Rendah/Biru, 1 = Ti
 Map.to_html('peta_realtime_semarang.html')
 Map.to_html('index.html')
 print("Selesai! Peta dengan layer control berhasil dibuat.")
+
+# 10. Ekspor URL Tile GEE ke gis_layers.json untuk Dashboard Next.js (Ilham)
+# Menyembunyikan zona aman (< 0.45) agar peta di dashboard bersih dan hanya menampilkan zona Waspada-Bahaya
+prob_raster_clean = prob_raster.updateMask(prob_raster.gte(0.45))
+vis_ai_clean = {
+    'min': 0.45,
+    'max': 1.0,
+    'palette': ['#ffffbf', '#fdae61', '#d7191c']
+}
+
+gis_layers_payload = {
+    "updatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+    "layers": {
+        "susceptibility": prob_raster_clean.getMapId(vis_ai_clean)['tile_fetcher'].url_format,
+        "susceptibilityFull": prob_raster.getMapId(vis_ai)['tile_fetcher'].url_format,
+        "sentinelRadar": s1_latest.getMapId({'min': -25, 'max': 0, 'palette': ['black', 'white']})['tile_fetcher'].url_format,
+        "liveFlood": current_flooding.getMapId({'palette': ['red']})['tile_fetcher'].url_format,
+        "boundary": semarang.style(color='0f172a', fillColor='00000000', width=2).getMapId()['tile_fetcher'].url_format
+    }
+}
+
+with open('gis_layers.json', 'w') as f:
+    json.dump(gis_layers_payload, f, indent=2)
+print("File gis_layers.json berhasil dibuat untuk integrasi Next.js!")

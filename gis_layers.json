@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-22T18:46:19.418208Z",
+  "updatedAt": "2026-11-23T04:24:54.712187Z",
   "layers": {
-    "susceptibility": "https://earthengine.googleapis.com/v1/projects/earthengine-legacy/maps/1cbf49bea9c3ffb221c508fe41e1b06b-7a80ce558ef25bcdedadeb8a433a663a/tiles/{z}/{x}/{y}",
-    "susceptibilityFull": "https://earthengine.googleapis.com/v1/projects/earthengine-legacy/maps/7d986e48bf44615f6ba213fa078dc1c5-c03c3cef2dfef37d43854b7096577a40/tiles/{z}/{x}/{y}",
-    "sentinelRadar": "https://earthengine.googleapis.com/v1/projects/earthengine-legacy/maps/743df242810ab7e49a1c4780901b672a-851301e1aa836f3595a2122da1d2df8f/tiles/{z}/{x}/{y}",
-    "liveFlood": "https://earthengine.googleapis.com/v1/projects/earthengine-legacy/maps/1e9b329e60473e8743fec1dc9f79cd6e-bdb8e6cbdfc0fab85f3078b7c87e2957/tiles/{z}/{x}/{y}",
-    "boundary": "https://earthengine.googleapis.com/v1/projects/earthengine-legacy/maps/0c6228e4cbeec3889647e81ea63912e0-9539268f68f89dbd66ac59b4bbb65cd2/tiles/{z}/{x}/{y}"
+    "susceptibility": "https://earthengine.googleapis.com/v1/projects/earthengine-legacy/maps/dd8206034123648e02a47b0fd3b213db-393d0ebdedc1e75de85eec629cb0d64d/tiles/{z}/{x}/{y}",
+    "susceptibilityFull": "https://earthengine.googleapis.com/v1/projects/earthengine-legacy/maps/239d02dcebbb172ee3b9a7587133f85b-aed6aa3d23088c135ed757cf98f233ea/tiles/{z}/{x}/{y}",
+    "sentinelRadar": "https://earthengine.googleapis.com/v1/projects/earthengine-legacy/maps/753f11060e998bf3c909816306505d48-a8532028ba2e5b2b767942bf24815110/tiles/{z}/{x}/{y}",
+    "liveFlood": "https://earthengine.googleapis.com/v1/projects/earthengine-legacy/maps/bfd4393ba8e8212934f42492e929260e-c42b413c7cb87f3fc2474fd6b82bf37e/tiles/{z}/{x}/{y}",
+    "boundary": "https://earthengine.googleapis.com/v1/projects/earthengine-legacy/maps/0c6228e4cbeec3889647e81ea63912e0-8d0e6334709f538e4b88b2434622d3e5/tiles/{z}/{x}/{y}"
   }
 }
